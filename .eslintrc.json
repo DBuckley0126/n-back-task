@@ -40,25 +40,30 @@
       "rules": {}
     },
     {
-      "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nrwl/nx/javascript"],
-      "rules": {
-        "prefer-arrow-callback": "error",
-
-        "react/forbid-foreign-prop-types": [
-          "warn",
-          { "allowInPropTypes": true }
-        ],
-        "react/jsx-props-no-spreading": false,
-        "react/forbid-prop-types": ["warn", { "forbid": ["any", "array"] }]
-      }
-    },
-    {
-      "files": ["*.jsx"],
-      "rules": {
-        "react/react-in-jsx-scope": "off"
-      }
-    },
+			"files": ["*.js", "*.jsx"],
+			"extends": ["plugin:@nrwl/nx/javascript"],
+			"rules": {
+				"prefer-arrow-callback": "error",
+				"react/jsx-props-no-spreading": "off",
+				"react/forbid-foreign-prop-types": [
+					"warn",
+					{ "allowInPropTypes": true }
+				]
+			}
+		},
+		{
+			"files": ["*.jsx"],
+			"rules": {
+				"react/react-in-jsx-scope": "off"
+			}
+		},
+		{
+			"files": ["*.spec.js"],
+			"rules": {
+				"prefer-arrow-callback": "off",
+				"func-names": "off"
+			}
+		},
     {
       "files": ["*.slice.js"],
       "rules": {
