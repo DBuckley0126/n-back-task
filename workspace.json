@@ -12,11 +12,11 @@
           "options": {
             "outputPath": "dist/apps/frontend",
             "index": "apps/frontend/src/index.html",
-            "main": "apps/frontend/src/main.js",
+            "main": "apps/frontend/src/main.jsx",
             "polyfills": "apps/frontend/src/polyfills.js",
             "tsConfig": "apps/frontend/tsconfig.app.json",
             "assets": [
-              "apps/frontend/src/favicon.ico",
+              "apps/frontend/src/assets/favicon.ico",
               "apps/frontend/src/assets"
             ],
             "styles": [],

@@ -58,7 +58,7 @@
 			}
 		},
 		{
-			"files": ["*.spec.js"],
+			"files": ["*.spec.jsx", "*.spec.js"],
 			"rules": {
 				"prefer-arrow-callback": "off",
 				"func-names": "off"

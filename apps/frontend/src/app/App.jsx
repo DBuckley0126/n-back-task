@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
-import { ReactComponent as Logo } from './logo.svg';
-import star from './star.svg';
+import { ReactComponent as Logo } from '../assets/logo.svg';
+import star from '../assets/star.svg';
+
 const StyledApp = styled.div`
   font-family: sans-serif;
   min-width: 300px;

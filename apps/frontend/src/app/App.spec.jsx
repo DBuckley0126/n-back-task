@@ -1,8 +1,9 @@
 import { render } from '@testing-library/react';
-import Ui from './Ui';
-describe('Ui', () => {
+import App from './App';
+
+describe('App', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Ui />);
+    const { baseElement } = render(<App />);
     expect(baseElement).toBeTruthy();
   });
 });
