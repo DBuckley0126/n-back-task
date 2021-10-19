@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
-
 import { ReactComponent as Logo } from './logo.svg';
 import star from './star.svg';
-
 const StyledApp = styled.div`
   font-family: sans-serif;
   min-width: 300px;
@@ -131,7 +129,6 @@ const StyledApp = styled.div`
     margin-right: 4px;
   }
 `;
-
 export function App() {
   return (
     <StyledApp>
@@ -226,5 +223,4 @@ nx affected:e2e
     </StyledApp>
   );
 }
-
 export default App;
