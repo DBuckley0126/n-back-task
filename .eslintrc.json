@@ -2,10 +2,23 @@
   "root": true,
   "ignorePatterns": ["**/*"],
   "plugins": ["@nrwl/nx"],
+  "extends": ["airbnb", "airbnb/hooks", "plugin:prettier/recommended"],
+  "rules": {
+    "prettier/prettier": "error"
+  },
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "jest": true,
+        "node": true
+      },
       "rules": {
+        "comma-dangle": ["error", "never"],
+        "import/no-unresolved": ["off", { "paths": ["@portfolio/ui"] }],
         "@nrwl/nx/enforce-module-boundaries": [
           "error",
           {
@@ -29,7 +42,28 @@
     {
       "files": ["*.js", "*.jsx"],
       "extends": ["plugin:@nrwl/nx/javascript"],
-      "rules": {}
+      "rules": {
+        "prefer-arrow-callback": "error",
+
+        "react/forbid-foreign-prop-types": [
+          "warn",
+          { "allowInPropTypes": true }
+        ],
+        "react/jsx-props-no-spreading": false,
+        "react/forbid-prop-types": ["warn", { "forbid": ["any", "array"] }]
+      }
+    },
+    {
+      "files": ["*.jsx"],
+      "rules": {
+        "react/react-in-jsx-scope": "off"
+      }
+    },
+    {
+      "files": ["*.slice.js"],
+      "rules": {
+        "no-param-reassign": "off"
+      }
     }
   ]
 }
