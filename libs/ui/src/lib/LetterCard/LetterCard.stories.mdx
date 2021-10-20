@@ -1,0 +1,52 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+
+import LetterCard from './LetterCard.jsx'
+
+<Meta
+	title="LetterCard"
+	component={LetterCard}
+	argTypes={{
+		children: {
+			description: 'Pass in letter as child',
+			defaultValue: 'G',
+			type: { name: 'string', required: false }
+		}
+	}}
+/>
+
+export const Template = (args) => <LetterCard {...args} />
+
+# LetterCard
+
+A general use button built ontop of **Material UI button** being animated with Framer Motion.
+Different status can be passed in to show success or error.
+Resizes based on device.
+
+Made to Web Content Accessibility Guidelines with customised focus styling.
+
+## Libaries
+
+-   [Material UI](https://mui.com/getting-started/usage/)
+-   [Framer Motion](https://www.framer.com/docs/)
+
+### Primary
+
+<Canvas>
+	<Story name="Primary">{Template.bind({})}</Story>
+</Canvas>
+
+### Success
+
+<Canvas>
+	<Story name="Success" args={{ status: 'success' }}>
+		{Template.bind({})}
+	</Story>
+</Canvas>
+
+### Error
+
+<Canvas>
+	<Story name="Error" args={{ status: 'error' }}>
+		{Template.bind({})}
+	</Story>
+</Canvas>

@@ -87,7 +87,9 @@
           "executor": "@nrwl/cypress:cypress",
           "options": {
             "cypressConfig": "apps/frontend-e2e/cypress.json",
-            "devServerTarget": "frontend:serve"
+            "devServerTarget": "frontend:serve",
+            "exit": false,
+						"watch": true
           },
           "configurations": {
             "production": {
@@ -166,7 +168,9 @@
           "executor": "@nrwl/cypress:cypress",
           "options": {
             "cypressConfig": "apps/ui-e2e/cypress.json",
-            "devServerTarget": "ui:storybook"
+            "devServerTarget": "ui:storybook",
+            "exit": false,
+						"watch": true
           },
           "configurations": {
             "ci": {
