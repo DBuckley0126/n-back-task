@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 const LetterCard = ({ children, status, ...props }) => {
 	const theme = useTheme()
 	const [keyboardFocused, setKeyboardFocus] = useState(false)
-	const cardHeights = [210, 220, 230, 240]
+	const cardHeights = [210, 230, 250]
 	const variants = {
 		initial: {
 			y: -20,
