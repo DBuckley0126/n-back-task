@@ -1,10 +1,9 @@
-import { useState } from 'react'
-import { Input, Box, Typography, Button } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 
-import { useDispatch, useSelector } from 'react-redux'
-import ChevronRight from '@mui/icons-material/ChevronRight'
+import { useSelector } from 'react-redux'
+
 import { motion } from 'framer-motion'
-import PropTypes from 'prop-types'
+
 import { appSelectors } from '../store/app.slice'
 
 const Title = () => {

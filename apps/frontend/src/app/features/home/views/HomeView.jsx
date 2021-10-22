@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Input, Box, Typography } from '@mui/material'
+import { useDispatch } from 'react-redux'
+import { Box } from '@mui/material'
 import { motion } from 'framer-motion'
-import PropTypes from 'prop-types'
 
 import NameInput from '../components/NameInput'
 import StartButton from '../components/StartButton'

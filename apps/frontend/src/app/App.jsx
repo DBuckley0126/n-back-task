@@ -1,7 +1,5 @@
-import { useState } from 'react'
-import { Input, Box, Typography, Button } from '@mui/material'
 import { AnimatePresence } from 'framer-motion'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 import { appSelectors } from './store/app.slice'
 import HomeView from './features/home/views/HomeView'

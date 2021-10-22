@@ -1,9 +1,8 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Input, Box, Typography } from '@mui/material'
+import { Box } from '@mui/material'
 import { motion, AnimatePresence } from 'framer-motion'
 import { LetterCard } from '@n-back-task/ui'
-import PropTypes from 'prop-types'
 
 import { taskActions, taskSelectors } from '../store/task.slice'
 

@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Box, Typography } from '@mui/material'
 import { motion } from 'framer-motion'
 import PropTypes from 'prop-types'
