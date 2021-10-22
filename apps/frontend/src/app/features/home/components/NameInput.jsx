@@ -34,6 +34,11 @@ const NameInput = ({ value, setValue, error }) => {
 
 NameInput.propTypes = {
 	value: PropTypes.string.isRequired,
-	setValue: PropTypes.func.isRequired
+	setValue: PropTypes.func.isRequired,
+	error: PropTypes.bool
+}
+
+NameInput.defaultProps = {
+	error: false
 }
 export default NameInput
