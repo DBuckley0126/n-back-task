@@ -1,7 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
 import { APP_FEATURE_KEY, appReducer } from './app/store/app.slice'
-import { TASK_FEATURE_KEY, taskReducer } from './app/features/task/store/task.slice'
+import {
+	TASK_FEATURE_KEY,
+	taskReducer
+} from './app/features/task/store/task.slice'
 const store = configureStore({
 	reducer: {
 		[APP_FEATURE_KEY]: appReducer,

@@ -19,6 +19,13 @@ export const getRandomisedLetterArray = () => {
 	}
 	return output
 }
+export const processCorrectChancesWithinArray = (array) =>
+	array.reduce((totalChances, { index, letter }) => {
+		if (array[index - 2]?.letter === letter) {
+			return totalChances + 1
+		}
+		return totalChances
+	}, 0)
 
 export const asyncTimeout = async (ms) => {
 	return new Promise((resolve) => setTimeout(resolve, ms))

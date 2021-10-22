@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSelector, createSlice } from '@reduxjs/toolkit'
+import { createSelector, createSlice } from '@reduxjs/toolkit'
 import { startTask } from '../features/task/store/task.slice'
 
 export const APP_FEATURE_KEY = 'app'
@@ -18,6 +18,11 @@ export const appSlice = createSlice({
 		setStage: (state, action) => {
 			state.stage = action.payload
 		}
+	},
+	extraReducers: (builder) => {
+		builder.addCase(startTask.fulfilled, (state, action) => {
+			state.stage = 'scoreboard'
+		})
 	}
 })
 

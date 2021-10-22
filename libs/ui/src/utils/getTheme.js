@@ -65,6 +65,30 @@ const getTheme = (mode = 'light') => {
 					fontSize: '6rem'
 				}
 			},
+			h3: {
+				fontFamily: 'Roboto, Arial, Sans-Serif',
+				fontWeight: 500,
+				color: theme.palette.text.primary,
+				fontSize: '3rem',
+				[theme.breakpoints.up('tablet')]: {
+					fontSize: '3.5rem'
+				},
+				[theme.breakpoints.up('desktop')]: {
+					fontSize: '4rem'
+				}
+			},
+			h4: {
+				fontFamily: 'Roboto, Arial, Sans-Serif',
+				fontWeight: 500,
+				color: theme.palette.text.primary,
+				fontSize: '2.2rem',
+				[theme.breakpoints.up('tablet')]: {
+					fontSize: '2.6rem'
+				},
+				[theme.breakpoints.up('desktop')]: {
+					fontSize: '3rem'
+				}
+			},
 			body1: {
 				color: theme.palette.text.primary,
 				fontFamily: 'Roboto, Arial, Sans-Serif'

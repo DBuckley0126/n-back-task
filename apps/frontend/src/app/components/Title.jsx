@@ -31,6 +31,10 @@ const Title = () => {
 					top: '20%',
 					opacity: 1
 				},
+				scoreboard: {
+					top: '20%',
+					opacity: 1
+				},
 				task: {
 					top: '10%',
 					opacity: 1
