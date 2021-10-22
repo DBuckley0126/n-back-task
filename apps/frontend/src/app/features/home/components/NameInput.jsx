@@ -12,6 +12,7 @@ const NameInput = ({ value, setValue, error }) => {
 			}}
 		>
 			<Input
+				data-cy="name-input"
 				placeholder="Enter name"
 				value={value}
 				inputProps={{
@@ -25,7 +26,11 @@ const NameInput = ({ value, setValue, error }) => {
 				onChange={(event) => setValue(event.target.value)}
 				error={error}
 			/>
-			<Typography variant="helperText" sx={{ marginTop: 2, height: 20 }}>
+			<Typography
+				variant="helperText"
+				data-cy="name-input-validation-message"
+				sx={{ marginTop: 2, height: 20 }}
+			>
 				{error && 'Name can only contain letters'}
 			</Typography>
 		</Box>

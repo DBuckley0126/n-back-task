@@ -10,7 +10,7 @@ import { appActions } from '../../../store/app.slice'
 const HomeView = () => {
 	const [nameInputValue, setNameInputValue] = useState('')
 	const dispatch = useDispatch()
-	const invalidInput = /[^a-z]/i.test(nameInputValue)
+	const invalidInput = /[^a-z ]/i.test(nameInputValue)
 	return (
 		<Box
 			sx={{

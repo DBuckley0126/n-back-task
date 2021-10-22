@@ -7,6 +7,7 @@ const StartButton = ({ show, ...props }) => {
 	return (
 		<Button
 			variant="outlined"
+			data-cy="start-button"
 			color="primary"
 			endIcon={<ChevronRight />}
 			variants={{
@@ -22,6 +23,7 @@ const StartButton = ({ show, ...props }) => {
 			initial="hidden"
 			animate={show ? 'visible' : 'hidden'}
 			exit="hidden"
+			disabled={!show}
 			component={motion.div}
 			transition={{ duration: 0.4, type: 'spring', bounce: 0.5 }}
 			{...props}
