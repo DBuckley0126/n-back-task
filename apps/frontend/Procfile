@@ -1,1 +1,1 @@
-web: npx nx serve frontend --port=$PORT --host=n-back-task.herokuapp.com --ssl
+web: bin/boot
