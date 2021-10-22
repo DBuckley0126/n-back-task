@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 
 import NameInput from '../components/NameInput'
 import StartButton from '../components/StartButton'
-import { appActions, appSelectors } from '../../../store/app.slice'
+import { appActions } from '../../../store/app.slice'
 
 const HomeView = () => {
 	const [nameInputValue, setNameInputValue] = useState('')
@@ -38,7 +38,7 @@ const HomeView = () => {
 				error={invalidInput}
 			/>
 			<StartButton
-				show={nameInputValue && !invalidInput}
+				show={!!(nameInputValue && !invalidInput)}
 				onClick={() => dispatch(appActions.startTask(nameInputValue))}
 			/>
 		</Box>

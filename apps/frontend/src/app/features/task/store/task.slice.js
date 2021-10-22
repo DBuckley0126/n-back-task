@@ -6,6 +6,7 @@ import {
 	processCorrectChancesWithinArray
 } from '../utils'
 import { appActions } from '../../../store/app.slice'
+import config from '../../../config.json'
 
 export const TASK_FEATURE_KEY = 'task'
 
@@ -45,15 +46,19 @@ export const taskSlice = createSlice({
 export const startTask = createAsyncThunk(
 	'task/startTask',
 	async (_, thunkAPI) => {
-		const state = thunkAPI.getState()
 		const randomisedLetterArray = getRandomisedLetterArray()
 
+		let currentLetterCount = 0
+
+		await asyncTimeout(2000)
 		for await (const letterObject of randomisedLetterArray) {
 			thunkAPI.dispatch(taskSlice.actions.setInteractionStatus(null))
 
-			if (thunkAPI.getState().task.incorrectInteractions < 2) {
-				await asyncTimeout(2000)
-
+			if (
+				thunkAPI.getState().task.incorrectInteractions <
+				config.incorrectInteractionsAllowed
+			) {
+				currentLetterCount += 1
 				thunkAPI.dispatch(
 					taskSlice.actions.setCurrentLetterObject(letterObject)
 				)
@@ -64,15 +69,18 @@ export const startTask = createAsyncThunk(
 						)
 					)
 				}
+				await asyncTimeout(config.stimulusTime)
 			}
 		}
+
 		const totalAmountOfCorrectChances = processCorrectChancesWithinArray(
-			randomisedLetterArray
+			randomisedLetterArray.slice(0, currentLetterCount)
 		)
 
 		thunkAPI.dispatch(
 			taskSlice.actions.setMissedCorrectInteractions(
-				totalAmountOfCorrectChances - state.task.correctInteractions
+				totalAmountOfCorrectChances -
+					thunkAPI.getState().task.correctInteractions
 			)
 		)
 		return Promise.resolve([])
@@ -90,7 +98,10 @@ export const interactionCheck = createAsyncThunk(
 		} else {
 			thunkAPI.dispatch(taskSlice.actions.plusIncorrectInteractions())
 			thunkAPI.dispatch(taskSlice.actions.setInteractionStatus('error'))
-			if (state.task.incorrectInteractions >= 1) {
+			if (
+				state.task.incorrectInteractions >=
+				config.incorrectInteractionsAllowed - 1
+			) {
 				thunkAPI.dispatch(appActions.setStage('scoreboard'))
 			}
 		}
