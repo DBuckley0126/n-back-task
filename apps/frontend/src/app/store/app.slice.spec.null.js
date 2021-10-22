@@ -1,4 +1,5 @@
 import { fetchApp, appAdapter, appReducer } from './app.slice'
+
 describe('app reducer', () => {
 	// it('should handle initial state', () => {
 	// 	const expected = appAdapter.getInitialState({

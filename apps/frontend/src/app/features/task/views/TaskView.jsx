@@ -15,7 +15,7 @@ const TaskView = () => {
 	const interactionStatus = useSelector(taskSelectors.getInteractionStatus)
 
 	useEffect(() => {
-		dispatch(taskActions.startTask(taskActions))
+		dispatch(taskActions.startTaskProcess())
 	}, [])
 	return (
 		<Box

@@ -1,5 +1,5 @@
 import { createSelector, createSlice } from '@reduxjs/toolkit'
-import { startTask } from '../features/task/store/task.slice'
+import { startTaskProcess } from '../features/task/store/task.slice'
 
 export const APP_FEATURE_KEY = 'app'
 
@@ -20,9 +20,11 @@ export const appSlice = createSlice({
 		}
 	},
 	extraReducers: (builder) => {
-		builder.addCase(startTask.fulfilled, (state, action) => {
-			state.stage = 'scoreboard'
-		})
+		if (startTaskProcess?.fulfilled) {
+			builder.addCase(startTaskProcess.fulfilled, (state, action) => {
+				state.stage = 'scoreboard'
+			})
+		}
 	}
 })
 

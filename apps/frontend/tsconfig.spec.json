@@ -11,7 +11,7 @@
     "**/*.spec.js",
     "**/*.spec.jsx",
     "**/*.d.ts"
-  ],
+, "src/app/store/app.slice.spec.null.js", "src/app/features/task/store/task.slice.spec.null.js"  ],
   "files": [
     "../../node_modules/@nrwl/react/typings/cssmodule.d.ts",
     "../../node_modules/@nrwl/react/typings/image.d.ts"

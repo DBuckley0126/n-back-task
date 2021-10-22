@@ -43,8 +43,8 @@ export const taskSlice = createSlice({
 	}
 })
 
-export const startTask = createAsyncThunk(
-	'task/startTask',
+export const startTaskProcess = createAsyncThunk(
+	'task/startTaskProcess',
 	async (_, thunkAPI) => {
 		const randomisedLetterArray = getRandomisedLetterArray()
 
@@ -112,7 +112,7 @@ export const interactionCheck = createAsyncThunk(
 
 export const taskReducer = taskSlice.reducer
 
-export const taskActions = { ...taskSlice.actions, startTask, interactionCheck }
+export const taskActions = { ...taskSlice.actions, startTaskProcess, interactionCheck }
 
 const getTaskState = (rootState) => rootState[TASK_FEATURE_KEY]
 
