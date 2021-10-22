@@ -10,6 +10,7 @@ const getTheme = (mode = 'light') => {
 			primary: {
 				main: 'rgba(0, 0, 0, 0.87)'
 			},
+
 			success: { main: 'rgb(141, 253, 146)' },
 			error: { main: 'rgb(253, 141, 141)' }
 		},
@@ -66,6 +67,10 @@ const getTheme = (mode = 'light') => {
 			},
 			body1: {
 				color: theme.palette.text.primary,
+				fontFamily: 'Roboto, Arial, Sans-Serif'
+			},
+			helperText: {
+				color: theme.palette.error.main,
 				fontFamily: 'Roboto, Arial, Sans-Serif'
 			},
 			fontFamily: 'Roboto, Arial, Sans-Serif'
