@@ -5,8 +5,12 @@
 	"scripts": {
 		"start": "nx serve",
 		"build": "nx build",
-		"test": "nx test"
+		"test": "nx test",
+		"heroku-postbuild": "npx nx build frontend --deployUrl=https://git.heroku.com/n-back-task.git"
 	},
+	"engines": {
+    "node": "14.x"
+  },
 	"private": true,
 	"resolutions": {
 		"**/@emotion/styled": "^11.0.0"
