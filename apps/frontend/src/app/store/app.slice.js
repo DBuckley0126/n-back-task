@@ -32,8 +32,9 @@ export const appActions = appSlice.actions
 
 const getAppState = (rootState) => rootState[APP_FEATURE_KEY]
 const getStage = createSelector(getAppState, (state) => state.stage)
-
+const getUserName = createSelector(getAppState, (state) => state.userName)
 export const appSelectors = {
-	getStage
+	getStage,
+	getUserName
 }
 // export const selectAppEntities = createSelector(getAppState, selectEntities)

@@ -20,7 +20,8 @@ const Title = () => {
 				flexDirection: 'column',
 				justifyContent: 'center',
 				width: 'fit-content',
-				height: 'auto'
+				height: 'auto',
+				textAlign: 'center'
 			}}
 			variants={{
 				initial: {

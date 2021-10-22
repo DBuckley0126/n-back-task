@@ -50,7 +50,8 @@ export const startTask = createAsyncThunk(
 
 		for await (const letterObject of randomisedLetterArray) {
 			thunkAPI.dispatch(taskSlice.actions.setInteractionStatus(null))
-			if (state.task.incorrectInteractions < 1) {
+
+			if (thunkAPI.getState().task.incorrectInteractions < 2) {
 				await asyncTimeout(2000)
 
 				thunkAPI.dispatch(
@@ -68,7 +69,7 @@ export const startTask = createAsyncThunk(
 		const totalAmountOfCorrectChances = processCorrectChancesWithinArray(
 			randomisedLetterArray
 		)
-		console.log(totalAmountOfCorrectChances)
+
 		thunkAPI.dispatch(
 			taskSlice.actions.setMissedCorrectInteractions(
 				totalAmountOfCorrectChances - state.task.correctInteractions

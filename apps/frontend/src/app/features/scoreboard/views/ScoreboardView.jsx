@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import PropTypes from 'prop-types'
 
 import { taskSelectors } from '../../task/store/task.slice'
+import { appSelectors } from '../../../store/app.slice'
 
 const ScoreDisplay = ({ color, score, title, delay }) => {
 	return (
@@ -52,7 +53,7 @@ const ScoreboardView = () => {
 	const incorrectInteractions = useSelector(
 		taskSelectors.getIncorrectInteractions
 	)
-	const dispatch = useDispatch()
+	const userName = useSelector(appSelectors.getUserName)
 
 	return (
 		<Box
@@ -62,7 +63,7 @@ const ScoreboardView = () => {
 				left: '50%',
 				transform: 'translate(-50%, -50%)',
 				display: 'flex',
-				flexDirection: ['column', 'column', 'row'],
+				flexDirection: 'column',
 				justifyContent: 'center',
 				alignItems: 'center',
 				width: 'fit-content',
@@ -74,24 +75,37 @@ const ScoreboardView = () => {
 			transition={{ duration: 0.6 }}
 			component={motion.div}
 		>
-			<ScoreDisplay
-				color="error.main"
-				score={incorrectInteractions}
-				title="Errors"
-				delay={0}
-			/>
-			<ScoreDisplay
-				color="success.main"
-				score={correctInteractions}
-				title="Correct"
-				delay={0.3}
-			/>
-			<ScoreDisplay
-				color="error.main"
-				score={missedCorrectInteractions}
-				title="Missed"
-				delay={0.6}
-			/>
+			<Typography
+				sx={{ mb: [0, 0, 5], mt: [5, 5, 0], textAlign: 'center' }}
+				variant="h3"
+			>{`${userName} your score is`}</Typography>
+			<Box
+				sx={{
+					display: 'flex',
+					flexDirection: ['column', 'column', 'row'],
+					justifyContent: 'center',
+					alignItems: 'center'
+				}}
+			>
+				<ScoreDisplay
+					color="error.main"
+					score={incorrectInteractions}
+					title="Errors"
+					delay={0}
+				/>
+				<ScoreDisplay
+					color="success.main"
+					score={correctInteractions}
+					title="Correct"
+					delay={0.3}
+				/>
+				<ScoreDisplay
+					color="error.main"
+					score={missedCorrectInteractions}
+					title="Missed"
+					delay={0.6}
+				/>
+			</Box>
 		</Box>
 	)
 }
