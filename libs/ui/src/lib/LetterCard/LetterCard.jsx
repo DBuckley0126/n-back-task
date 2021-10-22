@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { ButtonBase, Typography } from '@mui/material'
-import { motion } from 'framer-motion'
+import { motion, useIsPresent } from 'framer-motion'
 import { useTheme } from '@material-ui/core/styles'
 import PropTypes from 'prop-types'
 
-const LetterCard = ({ children, status, ...props }) => {
+const LetterCard = ({ children, disabled, status, ...props }) => {
 	const theme = useTheme()
+	const isPresent = useIsPresent()
 	const [keyboardFocused, setKeyboardFocus] = useState(false)
 	const cardHeights = [210, 230, 250]
 	const variants = {
@@ -60,6 +61,7 @@ const LetterCard = ({ children, status, ...props }) => {
 			exit="exit"
 			transition={{ type: 'tween', ease: 'easeInOut', duration: 0.4 }}
 			component={motion.div}
+			disabled={disabled || !isPresent}
 			data-cy="letter-card"
 			{...props}
 		>
@@ -72,12 +74,14 @@ const LetterCard = ({ children, status, ...props }) => {
 
 LetterCard.propTypes = {
 	children: PropTypes.string,
-	status: PropTypes.oneOf(['success', 'error', null])
+	status: PropTypes.oneOf(['success', 'error', null]),
+	disabled: PropTypes.bool
 }
 
 LetterCard.defaultProps = {
 	children: '',
-	status: null
+	status: null,
+	disabled: false
 }
 
 export default LetterCard

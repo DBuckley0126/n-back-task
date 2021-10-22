@@ -10,6 +10,9 @@ This project was generated using [Nx](https://nx.dev).
 
 Run `npx nx serve frontend` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
+Run `nx run ui:storybook` to run storybook locally. Navigate to http://localhost:4400/. The app will automatically reload if you change any of the source files.
+ 
+
 ## Running unit tests
 
 Run `npx nx test frontend` to execute the unit tests via [Jest](https://jestjs.io) for frontend.
