@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Box } from '@mui/material'
 import { motion, AnimatePresence } from 'framer-motion'
 import { LetterCard } from '@n-back-task/ui'
+import config from '../../../config.json'
 
 import { taskActions, taskSelectors } from '../store/task.slice'
 
@@ -51,7 +52,7 @@ const TaskView = () => {
 							)
 						}
 						status={interactionStatus}
-						disabled={currentLetterObject.index < 2}
+						disabled={currentLetterObject.index < config.nBack}
 					>
 						{currentLetterObject.letter}
 					</LetterCard>

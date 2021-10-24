@@ -75,7 +75,7 @@ const ScoreboardView = () => {
 			component={motion.div}
 		>
 			<Typography
-				sx={{ mb: [0, 0, 5], mt: [5, 5, 0], textAlign: 'center' }}
+				sx={{ mb: [0, 5, 5], mt: [5, 5, 0], textAlign: 'center' }}
 				variant="h3"
 			>{`${userName} your score is`}</Typography>
 			<Box

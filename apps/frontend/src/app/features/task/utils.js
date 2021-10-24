@@ -21,7 +21,7 @@ export const getRandomisedLetterArray = () => {
 }
 export const processCorrectChancesWithinArray = (array) =>
 	array.reduce((totalChances, { index, letter }) => {
-		if (array[index - 2]?.letter === letter) {
+		if (array[index - config.nBack]?.letter === letter) {
 			return totalChances + 1
 		}
 		return totalChances

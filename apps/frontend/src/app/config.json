@@ -1,1 +1,7 @@
-{ "difficultyLevel": 6, "trialLength": 15, "stimulusTime": 2000, "incorrectInteractionsAllowed": 2 }
+{
+	"difficultyLevel": 6,
+	"trialLength": 15,
+	"stimulusTime": 2000,
+	"incorrectInteractionsAllowed": 2,
+	"nBack": 2
+}

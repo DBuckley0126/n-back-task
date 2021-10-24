@@ -65,7 +65,9 @@ export const startTaskProcess = createAsyncThunk(
 				if (letterObject.index > 1) {
 					thunkAPI.dispatch(
 						taskSlice.actions.setLetterObjectToCheck(
-							randomisedLetterArray[letterObject.index - 2]
+							randomisedLetterArray[
+								letterObject.index - config.nBack
+							]
 						)
 					)
 				}
@@ -112,7 +114,11 @@ export const interactionCheck = createAsyncThunk(
 
 export const taskReducer = taskSlice.reducer
 
-export const taskActions = { ...taskSlice.actions, startTaskProcess, interactionCheck }
+export const taskActions = {
+	...taskSlice.actions,
+	startTaskProcess,
+	interactionCheck
+}
 
 const getTaskState = (rootState) => rootState[TASK_FEATURE_KEY]
 
