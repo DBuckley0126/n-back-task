@@ -130,7 +130,8 @@
 						"passWithNoTests": true
 					}
 				}
-			}
+			},
+			"tags": []
 		},
 		"frontend-e2e": {
 			"root": "apps/frontend-e2e",
@@ -158,7 +159,9 @@
 						"lintFilePatterns": ["apps/frontend-e2e/**/*.js"]
 					}
 				}
-			}
+			},
+			"tags": [],
+			"implicitDependencies": ["frontend"]
 		},
 		"ui": {
 			"root": "libs/ui",
@@ -211,7 +214,8 @@
 						}
 					}
 				}
-			}
+			},
+			"tags": []
 		},
 		"ui-e2e": {
 			"root": "apps/ui-e2e",
@@ -239,7 +243,9 @@
 						"lintFilePatterns": ["apps/ui-e2e/**/*.js"]
 					}
 				}
-			}
+			},
+			"tags": [],
+			"implicitDependencies": ["ui"]
 		}
 	}
 }

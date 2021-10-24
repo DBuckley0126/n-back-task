@@ -6,6 +6,7 @@ const toPath = (filePath) => path.join(process.cwd(), filePath)
 module.exports = {
 	...rootMain,
 
+	core: { ...rootMain.core, builder: 'webpack5' },
 	stories: [
 		...rootMain.stories,
 		'../src/lib/**/*.stories.mdx',

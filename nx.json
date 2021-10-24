@@ -27,22 +27,6 @@
 			}
 		]
 	},
-	"projects": {
-		"frontend": {
-			"tags": []
-		},
-		"frontend-e2e": {
-			"tags": [],
-			"implicitDependencies": ["frontend"]
-		},
-		"ui": {
-			"tags": []
-		},
-		"ui-e2e": {
-			"tags": [],
-			"implicitDependencies": ["ui"]
-		}
-	},
 	"cli": {
 		"defaultCollection": "@nrwl/react"
 	},
